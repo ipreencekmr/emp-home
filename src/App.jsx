@@ -7,7 +7,6 @@ import "./index.css";
 
 const App = () => (
   <div className="container">
-    Home
     <Employee></Employee>
     <Address></Address>
   </div>
