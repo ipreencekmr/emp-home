@@ -1,16 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Employee from "emp_employee/Employee";
-import Address from "emp_address/Address";
-
-import "./index.css";
+import { createRoot } from "react-dom/client";
+import { Dashboard } from "./components/Dashboard";
 
 const App = () => (
-  <div className="container">
-    <Employee></Employee>
-    <Address></Address>
-  </div>
+    <div className="">
+        <Dashboard></Dashboard>
+    </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+const globalApp = document.getElementById("app");
+
+const root = createRoot(globalApp);
+
+root.render(<App />);
 
 export default App;

@@ -1,0 +1,13 @@
+{
+    "ignoreWords": ["fortawesome", 
+    "fontawesome", 
+    "Gurugram",
+    "linebreak",
+    "Sharma",
+    "allowMultilines",
+    "lcov",
+    "cobertura",
+    "testid",
+    "Gurgaon"
+    ]
+}

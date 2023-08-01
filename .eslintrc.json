@@ -1,0 +1,51 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "import", "jsx-a11y"],
+  "rules": {
+    "key-spacing": ["error", { "afterColon": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "max-len": ["error", { "code": 100, "ignoreComments": true}],
+    "object-property-newline":"error",
+    "react/prop-types": 2,
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "linebreak-style": 1,
+    "quotes": ["error", "double"],
+    "object-curly-newline": ["error", { 
+      "ObjectExpression": "always", 
+      "ImportDeclaration": { "multiline": true, "minProperties": 3 },
+      "ExportDeclaration": { "multiline": true, "minProperties": 3 },
+      "ObjectPattern": { "multiline": true }
+    }],
+    "object-curly-spacing":["error", "always", { "objectsInObjects": true, "arraysInObjects": false  }],
+    "react/jsx-curly-spacing": [2, 
+    {
+      "when": "always", 
+      "spacing": {
+        "objectLiterals": "never"
+      }
+    }],
+    "prefer-template": 2
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+   "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".es.js"]
+      }
+    }
+  }
+}
