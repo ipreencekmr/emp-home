@@ -1,8 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React, { Suspense } from "react";
-// eslint-disable-next-line import/no-unresolved
-const Employee = React.lazy(() => import("emp_employee/Employee"));
-// eslint-disable-next-line import/no-unresolved
-const Address = React.lazy(() => import("emp_address/Address"));
+import Employee from "emp_employee/Employee";
+import Address from "emp_address/Address";
 
 import { PageControls } from "./PageControls";
 
@@ -13,10 +12,10 @@ import { EmployeeList } from "./EmployeeList";
 
 export const Dashboard = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <Routes>
 
-                <Route path='/*'  forceRefresh={ true } element={
+                <Route path='/' element={
                     <Suspense 
                         fallback={ "Loading" }>
                         <PageControls />
@@ -35,6 +34,13 @@ export const Dashboard = () => {
                     <Suspense 
                         fallback={ "Loading" }> 
                         <Address />
+                    </Suspense> 
+                }/>
+
+                <Route path='/mock' element={ 
+                    <Suspense 
+                        fallback={ "Loading" }> 
+                        <div>Mock Testing</div>
                     </Suspense> 
                 }/>
 
