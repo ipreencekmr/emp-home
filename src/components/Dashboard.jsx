@@ -1,13 +1,11 @@
 /* eslint-disable import/no-unresolved */
 import React, { Suspense } from "react";
 import Employee from "emp_employee/Employee";
-import Address from "emp_address/Address";
-
-import { PageControls } from "./PageControls";
-
 import {
     BrowserRouter, Route, Routes
 } from "react-router-dom";
+
+import { PageControls } from "./PageControls";
 import { EmployeeList } from "./EmployeeList";
 
 export const Dashboard = () => {
@@ -33,7 +31,7 @@ export const Dashboard = () => {
                 <Route path='/update/:id' element={ 
                     <Suspense 
                         fallback={ "Loading" }> 
-                        <Address />
+                        <Employee />
                     </Suspense> 
                 }/>
 
