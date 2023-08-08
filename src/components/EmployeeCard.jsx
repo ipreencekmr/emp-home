@@ -1,11 +1,11 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faEnvelope, faFemale, faMale 
+    faEnvelope, faFemale, faMale, faTransgender 
 } from "@fortawesome/free-solid-svg-icons";
 
-export const EmployeeCard = () => {
+export const EmployeeCard = ({ employee }) => {
     return (
         <div className="p-2">
             <div className="card" style={{
@@ -13,17 +13,23 @@ export const EmployeeCard = () => {
             }}>
                 <div className="card-header">
                     <div className="d-flex align-items-center justify-content-between flex-nowrap">
-                        <a href="/update/1" className="btn btn-outline-secondary">Edit</a>
-                        <span className="text-muted">B.Sc IT</span>
+                        <a href={ `/update/${employee.id}` } 
+                            className="btn btn-outline-secondary">Edit</a>
+                        <span className="text-muted">{employee?.qualification?.value}</span>
                     </div>
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Prince Kumar Sharma</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">IT Department</h6>
+                    <h5 className="card-title">{employee.firstName} {employee.lastName}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">{employee?.department?.value}</h6>
                     <div className="d-flex align-items-center">
-                        <FontAwesomeIcon icon={ faMale }></FontAwesomeIcon> 
-                        <FontAwesomeIcon icon={ faFemale }></FontAwesomeIcon> 
-                        <p className="card-text text-uppercase px-2">Male</p>
+                        {
+                            employee?.gender === "MALE" ? 
+                                <FontAwesomeIcon icon={ faMale }></FontAwesomeIcon> : 
+                                employee?.gender === "FEMALE" ? 
+                                    <FontAwesomeIcon icon={ faFemale }></FontAwesomeIcon> : 
+                                    <FontAwesomeIcon icon={ faTransgender }></FontAwesomeIcon>
+                        }
+                        <p className="card-text text-uppercase px-2">{employee?.gender}</p>
                     </div>
                 </div>
                 <div className="card-footer text-muted">
@@ -32,10 +38,26 @@ export const EmployeeCard = () => {
                         style={{
                             fontSize: "0.7rem"
                         }}>
-                            ipreencekmr@gmail.com
+                        {employee?.emailId}
                     </span>
                 </div>
             </div>
         </div>
     );
+};
+
+EmployeeCard.propTypes = {
+    employee: PropTypes.shape({
+        id: PropTypes.string,
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+        gender: PropTypes.string,
+        emailId: PropTypes.string,
+        qualification: PropTypes.shape({
+            value: PropTypes.string
+        }),
+        department: PropTypes.shape({
+            value: PropTypes.string
+        })  
+    })
 };
