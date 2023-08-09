@@ -61,7 +61,9 @@ export const PageControls = () => {
                         <div className="input-group-prepend">
                             <span className="input-group-text" id="homeFilterById">Filter By:</span>
                         </div>
-                        <select id="homeDepartmentId" 
+                        <select 
+                            id="homeDepartmentId" 
+                            data-testid="selectId"
                             className="form-control" 
                             aria-labelledby="homeFilterById"
                             value={ departmentId } 
@@ -76,7 +78,9 @@ export const PageControls = () => {
                                 </option>)
                             }
                         </select>
-                        <select id="homeQualificationId" 
+                        <select 
+                            id="homeQualificationId" 
+                            data-testid="selectId"
                             className="form-control" 
                             aria-labelledby="homeFilterById"
                             value={ qualificationId }
