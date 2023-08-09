@@ -6,6 +6,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const EmployeeCard = ({ employee }) => {
+
+    if(!employee) return null;
+    
     return (
         <div className="p-2">
             <div className="card" style={{

@@ -35,6 +35,6 @@ export const appReducer = (state = defaultState, action) => {
         default:
             return {
                 ...state
-            };
+            }
     }
 };

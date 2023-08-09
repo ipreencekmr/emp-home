@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import Employee from "emp_employee/Employee";
 import {
-    BrowserRouter, Route, Routes
+    BrowserRouter, Route, Routes, Navigate
 } from "react-router-dom";
 
 import { PageControls } from "./PageControls";
@@ -35,12 +35,7 @@ export const Dashboard = () => {
                     </Suspense> 
                 }/>
 
-                <Route path='/mock' element={ 
-                    <Suspense 
-                        fallback={ "Loading" }> 
-                        <div>Mock Testing</div>
-                    </Suspense> 
-                }/>
+                <Route path="*" element={ <Navigate to="/" /> } />
 
             </Routes>
         </BrowserRouter>
