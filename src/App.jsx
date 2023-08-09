@@ -1,6 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Dashboard } from "./components/Dashboard";
+import { store } from "./store/store";
+import { Provider } from "react-redux"
 
 const App = () => (
     <div className="">
@@ -12,6 +14,8 @@ const globalApp = document.getElementById("app");
 
 const root = createRoot(globalApp);
 
-root.render(<App />);
+root.render(<Provider store={ store }>
+    <App />
+</Provider>);
 
 export default App;

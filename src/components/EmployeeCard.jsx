@@ -48,7 +48,7 @@ export const EmployeeCard = ({ employee }) => {
 
 EmployeeCard.propTypes = {
     employee: PropTypes.shape({
-        id: PropTypes.string,
+        id: PropTypes.number,
         firstName: PropTypes.string,
         lastName: PropTypes.string,
         gender: PropTypes.string,
