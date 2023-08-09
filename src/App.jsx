@@ -1,17 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Employee from "emp_employee/Employee";
-import Address from "emp_address/Address";
-
-import "./index.css";
+import { createRoot } from "react-dom/client";
+import { Dashboard } from "./components/Dashboard";
+import { store } from "./store/store";
+import { Provider } from "react-redux"
 
 const App = () => (
-  <div className="container">
-    Home
-    <Employee></Employee>
-    <Address></Address>
-  </div>
+    <div className="">
+        <Dashboard></Dashboard>
+    </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+const globalApp = document.getElementById("app");
+
+const root = createRoot(globalApp);
+
+root.render(<Provider store={ store }>
+    <App />
+</Provider>);
 
 export default App;
