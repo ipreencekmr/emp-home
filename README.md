@@ -21,3 +21,7 @@
 ## Available Unit Test Coverage 
 
 <img width="625" alt="home-unit" src="https://github.com/ipreencekmr/emp-home/assets/3636918/6a95cae7-339a-427d-9347-d2d05c4208ab">
+
+## UI
+
+![home](https://github.com/ipreencekmr/emp-home/assets/3636918/3075e87c-4be6-4a95-ac07-1f658f13f11a)
