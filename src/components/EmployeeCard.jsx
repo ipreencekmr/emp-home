@@ -42,7 +42,7 @@ export const EmployeeCard = ({ employee, refresh }) => {
     return (
         <div className="p-2">
             <div className="card" style={{
-                width: "18rem"
+                minWidth: "20rem",
             }}>
                 <div className="card-header">
                     <div className="d-flex align-items-center justify-content-between flex-nowrap">
@@ -53,12 +53,12 @@ export const EmployeeCard = ({ employee, refresh }) => {
                 </div>
                 <div className="card-body">
                     <div className="row">
-                        <div className="col-sm-2">
+                        <div className="col-lg-2 col-md-2 col-2">
                             <FontAwesomeIcon 
                                 className="fa-40 fa-grey" 
                                 icon={ faUserCircle }></FontAwesomeIcon>
                         </div>
-                        <div className="col-sm-10 ps-4">
+                        <div className="col-lg-10 col-md-10 col-10 ps-4">
                             <h5 
                                 className="card-title">{employee.firstName} {employee.lastName}</h5>
                             <h6 
