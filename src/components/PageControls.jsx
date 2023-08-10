@@ -40,8 +40,8 @@ export const PageControls = () => {
     };
 
     return (
-        <div className="d-flex flex-row justify-content-between p-2">
-            <div className="d-flex flex-row justify-content-start">
+        <div className="d-flex flex-row justify-content-between flex-wrap p-2">
+            <div className="d-flex flex-row flex-wrap justify-content-start">
                 <div className="p-2">
                     <div className="input-group">
                         <div className="input-group-prepend">
