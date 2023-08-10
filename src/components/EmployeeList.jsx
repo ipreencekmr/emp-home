@@ -10,12 +10,13 @@ export const EmployeeList = () => {
     const {
         isLoading, 
         data, 
-        error
+        error,
+        fetchEmployees
     } = useEmployees();
 
-    const departmentId = useSelector((state) => state.departmentId);
-    const qualificationId = useSelector((state) => state.qualificationId);
-    const searchText = useSelector((state) => state.searchText);
+    const departmentId = useSelector((state) => state.app.departmentId);
+    const qualificationId = useSelector((state) => state.app.qualificationId);
+    const searchText = useSelector((state) => state.app.searchText);
     const [filteredList, setFilteredList] = useState(data);
 
     useEffect(()=>{
@@ -46,10 +47,10 @@ export const EmployeeList = () => {
     if(error) return <ErrorBanner></ErrorBanner>
 
     return (
-        <div className="d-flex flex-row justify-content-between flex-wrap p-2">
+        <div className="d-flex flex-row flex-wrap p-2">
             {
                 filteredList?.map((item) => (
-                    <EmployeeCard key={ item?.id } employee={ item }/>
+                    <EmployeeCard key={ item?.id } employee={ item } refresh={ fetchEmployees }/>
                 ))
             }
         </div>
