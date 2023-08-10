@@ -21,7 +21,7 @@ const mockEmpData = [
         gender: "MALE"
     },
     {
-        id: 1,
+        id: 2,
         firstName: "mockFirstName 2",
         lastName: "mockLastName 2",
         department: {
@@ -35,7 +35,7 @@ const mockEmpData = [
         gender: "FEMALE"
     },
     {
-        id: 1,
+        id: 3,
         firstName: "mockFirstName 3",
         lastName: "mockLastName 3",
         department: {
@@ -88,9 +88,16 @@ describe("EmployeeList", () => {
         });
         
         const mockState = {
-            departmentId: -1,
-            qualificationId: -1,
-            searchText: ""
+            app: {
+                departmentId: -1,
+                qualificationId: -1,
+                searchText: ""
+            },
+            modal: {
+                show: false,
+                buttonIndex: -1,
+                tagIndex: -1,
+            }
         };
 
         useSelector.mockImplementation((f) => f(mockState));
@@ -106,9 +113,16 @@ describe("EmployeeList", () => {
         });
         
         const mockState = {
-            departmentId: 1,
-            qualificationId: 1,
-            searchText: "mock"
+            app: {
+                departmentId: 1,
+                qualificationId: 1,
+                searchText: "mock"
+            },
+            modal: {
+                show: false,
+                buttonIndex: -1,
+                tagIndex: -1,
+            }
         };
 
         useSelector.mockImplementation((f) => f(mockState));

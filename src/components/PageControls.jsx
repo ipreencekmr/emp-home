@@ -9,9 +9,9 @@ import {
 export const PageControls = () => {
 
     const dispatch = useDispatch();
-    const departmentId = useSelector((state) => state.departmentId);
-    const qualificationId = useSelector((state) => state.qualificationId);
-    const searchText = useSelector((state) => state.searchText);
+    const departmentId = useSelector((state) => state.app.departmentId);
+    const qualificationId = useSelector((state) => state.app.qualificationId);
+    const searchText = useSelector((state) => state.app.searchText);
 
     const { data: departmentList } = useDepartments();
     const { data: qualificationList } = useQualifications();

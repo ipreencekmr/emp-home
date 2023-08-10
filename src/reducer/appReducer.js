@@ -2,13 +2,13 @@ import {
     RESET_FILTERS,
     SET_DEPARTMENT, 
     SET_QUALIFICATION, 
-    SET_SEARCH_TEXT 
+    SET_SEARCH_TEXT, 
 } from "../action/action"
 
 export const defaultState = {
     departmentId: -1,
     qualificationId: -1,
-    searchText: ""
+    searchText: "",
 };
 
 export const appReducer = (state = defaultState, action) => {

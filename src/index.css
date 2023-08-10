@@ -30,3 +30,29 @@ label {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+.fa-40 {
+    font-size: 46px;
+}
+
+.fa-grey {
+    color: rgb(190 190 190);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-close {
+    color: #6c757d;
+    border-color: #6c757d;
+    border: 0;
+}

@@ -1,7 +1,11 @@
 import { appReducer } from "../reducer/appReducer";
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { modalReducer } from "../reducer/modalReducer";
 
 export const store = configureStore({
-    reducer: appReducer
+    reducer: combineReducers({
+        app: appReducer,
+        modal: modalReducer
+    })
 });
 
