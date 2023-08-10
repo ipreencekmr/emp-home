@@ -11,7 +11,8 @@
     "start:docker": "docker run -p 3003:3003 ipreencekmr/emp-home",
     "start:all": "node ./scripts/serve.js",
     "start:all-dev": "node ./scripts/serve-dev.js",
-    "test": "jest --no-cache --watchAll"
+    "test": "jest --no-cache --watchAll",
+    "publish":"docker push ipreencekmr/emp-home"
   },
   "modules": [
     "../emp-employee",

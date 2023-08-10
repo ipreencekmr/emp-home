@@ -7,7 +7,7 @@ module.exports = (_, argv) => ({
     output: {
         publicPath: argv.mode == "development" ?
             "http://localhost:3003/":
-            "http://localhost:3003/",
+            "http://app.learn-coding.xyz:3003/",
     },
 
     resolve: {
@@ -51,8 +51,8 @@ module.exports = (_, argv) => ({
                     "emp_address@http://localhost:3007/remoteEntry.js": 
                     "emp_address@http://localhost:3007/remoteEntry.js",
                 emp_employee: argv.mode == "development" ?
-                    "emp_employee@http://localhost:3006/remoteEntry.js":
-                    "emp_employee@http://localhost:3006/remoteEntry.js"
+                    "emp_employee@http://app.learn-coding.xyz:3006/remoteEntry.js":
+                    "emp_employee@http://app.learn-coding.xyz:3006/remoteEntry.js"
                 ,
             },
             exposes: {
