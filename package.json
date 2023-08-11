@@ -11,8 +11,11 @@
     "start:docker": "docker run -p 3003:3003 ipreencekmr/emp-home",
     "start:all": "node ./scripts/serve.js",
     "start:all-dev": "node ./scripts/serve-dev.js",
-    "test": "jest --no-cache --watchAll",
-    "publish":"docker push ipreencekmr/emp-home"
+    "publish":"docker push ipreencekmr/emp-home",
+    "test": "jest --no-cache",
+    "test:watch": "jest --no-cache --watchAll",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "modules": [
     "../emp-employee",
